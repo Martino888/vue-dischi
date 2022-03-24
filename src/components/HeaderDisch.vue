@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <img class="logo" src="@/assets/img/logo.png" alt="">
+    <img class="logo" src="@/assets/img/logo-small.svg" alt="">
   </div>
 </template>
 
@@ -13,11 +13,11 @@ export default {
 <style scoped lang="scss">
 .nav{
   max-width: 100%;
-  background-color: blue;
+  background-color: rgb(42, 42, 47);
 }
 .logo{
-  width: 100px;
-  background: blue;
+  width: 50px;
+  padding:10px;
 }
 
 </style>
