@@ -1,6 +1,6 @@
 <template>
-  <div class="col-6 col-md-4 col-lg-3 card-album">
-    <img class="img-fluid" :src="cardFor.poster" :alt="cardFor.title">
+  <div class="card-album">
+    <img :src="cardFor.poster">
     <h2>{{cardFor.title}}</h2>
     <b>{{cardFor.author}}</b>
     <b>{{cardFor.year}}</b>
@@ -16,6 +16,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+.card-album{
+    width: calc(100% / 5 - 20px);
+    min-width: 150px;
+    background-color: rgb(48, 58, 69);
+    padding: 10px;
+    text-align: center;
+}
 
 </style>

@@ -3,6 +3,7 @@
     <HeaderDisch/>
     <MainDisch/>
     <FooterDisch/>
+    <CardDisch/>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import HeaderDisch from './components/HeaderDisch.vue'
 import MainDisch from './components/MainDisch.vue'
 import FooterDisch from './components/FooterDisch.vue'
+import CardDisch from './components/CardDisch.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderDisch,
     MainDisch,
-    FooterDisch
+    FooterDisch,
+    CardDisch
   }
 }
 </script>

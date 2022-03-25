@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-white">
+  <main class="bg-black">
     <div class="container">
       <div class="row">
         <CardDisch v-for="card in CardDisch" :key="card.poster" :cardFor="card" />
@@ -15,7 +15,9 @@ export default {
   nome: 'MainDisch',
   data () {
     return {
-      CardDisch: []
+      CardDisch: [
+
+      ]
     }
   },
   components: {
@@ -24,8 +26,8 @@ export default {
   create () {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
       .then((response) => {
-        console.log(response)
         this.CardDisch = response.data.response
+        console.log(CardDisch)
       })
   }
 }
