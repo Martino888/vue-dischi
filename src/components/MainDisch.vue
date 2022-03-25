@@ -1,7 +1,7 @@
 <template>
-  <main class="bg-black">
+  <main class="mainbg">
     <div class="container">
-      <div class="row">
+      <div class="row col-12">
         <CardDisch v-for="card in CardDisc" :key="card.poster" :cardFor="card" />
       </div>
     </div>
@@ -31,4 +31,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+  justify-content: center;
+}
+
+.row {
+  padding:90px;
+}
+
+.mainbg{
+  background-color:rgb(46, 58, 73);
+}
+</style>

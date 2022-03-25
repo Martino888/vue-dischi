@@ -1,8 +1,8 @@
 <template>
   <div class="card-album">
     <img :src="cardFor.poster">
-    <h2>{{cardFor.title}}</h2>
-    <b>{{cardFor.author}}</b>
+    <h4 class="text-white">{{cardFor.title}}</h4>
+    <p>{{cardFor.author}}</p>
     <b>{{cardFor.year}}</b>
   </div>
 </template>
@@ -20,14 +20,17 @@ export default {
 .card-album{
     width: calc(100% / 5 - 20px);
     min-width: 150px;
-    background-color: rgb(48, 58, 69);
+    background-color: rgb(63, 77, 92);
     padding: 10px;
+    justify-content: center;
     text-align: center;
+    margin: 10px;
+    margin-top: 10px;
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
 }
 
 </style>

@@ -13,7 +13,7 @@ export default {
 <style scoped lang="scss">
 .nav{
   max-width: 100%;
-  background-color: rgb(42, 42, 47);
+  background-color: rgb(63, 77, 92);
 }
 .logo{
   width: 50px;
