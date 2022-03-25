@@ -2,7 +2,7 @@
   <main class="mainbg">
     <div class="container">
       <div class="row col-12">
-        <CardDisch v-for="card in CardDisc" :key="card.poster" :cardFor="card" />
+        <CardDisch v-for="card in CardDisc" :key="card.title" :cardFor="card" />
       </div>
     </div>
   </main>
@@ -15,18 +15,17 @@ export default {
   nome: 'MainDisch',
   data () {
     return {
-      CardDisc: null
+      CardDisc: []
     }
   },
   components: {
     CardDisch
   },
   created () {
-    axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-      .then((res) => {
-        this.CardDisc = res.data.response
-        console.log(res)
-      })
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((res) => {
+      this.CardDisc = res.data.response
+    })
+    this.$emit('x', this.CardDisc)
   }
 }
 </script>

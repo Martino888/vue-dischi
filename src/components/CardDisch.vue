@@ -1,9 +1,9 @@
 <template>
   <div class="card-album">
-    <img :src="cardFor.poster">
+    <img :src='cardFor.poster'>
     <h4 class="text-white">{{cardFor.title}}</h4>
-    <p>{{cardFor.author}}</p>
-    <b>{{cardFor.year}}</b>
+    <div class="fw-bold text-secondary">{{cardFor.author}}</div>
+    <div class="fw-bold text-secondary">{{cardFor.year}}</div>
   </div>
 </template>
 

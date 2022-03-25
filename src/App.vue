@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderDisch/>
-    <MainDisch/>
+    <HeaderDisch :data='resulse'></HeaderDisch>
+    <MainDisch @x='getData($event)'></MainDisch>
     <FooterDisch/>
     <CardDisch/>
   </div>
@@ -20,6 +20,21 @@ export default {
     MainDisch,
     FooterDisch,
     CardDisch
+  },
+  data () {
+    return {
+      resulse: []
+    }
+  },
+  methods: {
+    getData (datas) {
+      datas.forEach((element) => {
+        if (!this.resulse.includes(element.genre)) {
+          this.resulse.push(element.genre)
+        }
+      })
+      console.log(this.resulse)
+    }
   }
 }
 </script>
