@@ -38,5 +38,9 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
+html{
+  background-color:rgb(46, 58, 73);
+}
 @import "~bootstrap/scss/bootstrap";
 </style>
