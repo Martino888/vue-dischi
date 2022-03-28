@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderDisch :data='resulse'></HeaderDisch>
-    <MainDisch @x='getData($event)'></MainDisch>
+    <HeaderDisch @x="selectGenere"></HeaderDisch>
+    <MainDisch :genere = genere></MainDisch>
     <FooterDisch/>
     <CardDisch/>
   </div>
@@ -10,7 +10,6 @@
 <script>
 import HeaderDisch from './components/HeaderDisch.vue'
 import MainDisch from './components/MainDisch.vue'
-import FooterDisch from './components/FooterDisch.vue'
 import CardDisch from './components/CardDisch.vue'
 
 export default {
@@ -18,22 +17,16 @@ export default {
   components: {
     HeaderDisch,
     MainDisch,
-    FooterDisch,
     CardDisch
   },
   data () {
     return {
-      resulse: []
+      genere: ''
     }
   },
   methods: {
-    getData (datas) {
-      datas.forEach((element) => {
-        if (!this.resulse.includes(element.genre)) {
-          this.resulse.push(element.genre)
-        }
-      })
-      console.log(this.resulse)
+    selectGenere (genre) {
+      this.genere = genre
     }
   }
 }

@@ -2,7 +2,7 @@
   <main class="mainbg">
     <div class="container">
       <div class="row col-12">
-        <CardDisch v-for="card in CardDisc" :key="card.title" :cardFor="card" />
+        <CardDisch v-for="card in arrFilter" :key="card.title" :cardFor="card" />
       </div>
     </div>
   </main>
@@ -21,11 +21,18 @@ export default {
   components: {
     CardDisch
   },
+  props: {
+    genere: String
+  },
+  computed: {
+    arrFilter () {
+      return this.CardDisc.filter(obj => obj.genre.includes(this.genere))
+    }
+  },
   created () {
-    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((res) => {
-      this.CardDisc = res.data.response
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
+      this.CardDisc = response.data.response
     })
-    this.$emit('x', this.CardDisc)
   }
 }
 </script>

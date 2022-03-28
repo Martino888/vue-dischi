@@ -1,19 +1,23 @@
 <template>
-  <div class="nav  d-flex justify-content-between">
+  <header class="nav  d-flex justify-content-between">
     <img class="logo" src="@/assets/img/spotify_logo.png" alt="">
-    <select class="">
-      <option value="all">all</option>
-      <option v-for="genere in data" :value="genere" :key="genere">{{ genere }}</option>
+    <select class="select"  v-model="userSelect" @change="$emit('x', userSelect)">
+      <option value="">all</option>
+      <option value="Rock">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Metal">Metal</option>
     </select>
-  </div>
+  </header>
 </template>
 
 <script>
 export default {
   name: 'HeaderDisch',
-  props: {
-    data: []
-
+  data () {
+    return {
+      userSelect: ''
+    }
   }
 }
 </script>
@@ -25,6 +29,12 @@ export default {
 }
 .logo{
   width: 69px;
+}
+
+.select{
+  width: 150px;
+  margin: 10px 50px;
+  border-radius:10px;
 }
 
 </style>
